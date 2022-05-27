@@ -131,3 +131,6 @@ dist
 
 .DS_Store
 .history
+
+prisma/dev.db
+prisma/dev.db-journal
