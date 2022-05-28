@@ -16,7 +16,8 @@
     "autofix",
     "esbenp",
     "prettierrc",
-    "typegraphql"
+    "typegraphql",
+    "Hasura"
   ],
   "ignorePaths": ["yarn.lock"]
 }
