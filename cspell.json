@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "deps",
+    "esbuild",
+    "Omittable",
+    "typecheck",
+    "Uncapitalize",
+    "nestjs",
+    "prebuild",
+    "Kamil",
+    "Myśliwiec",
+    "nestframework",
+    "swcrc",
+    "autofix",
+    "esbenp",
+    "prettierrc"
+  ],
+  "ignorePaths": ["yarn.lock"]
+}

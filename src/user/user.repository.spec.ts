@@ -1,34 +1,34 @@
-import { Test } from '@nestjs/testing';
-import type { TestingModule } from '@nestjs/testing';
-import { UserRepository } from './user.repository';
-import { PrismaService } from '../prisma/prisma.service';
+import { Test } from "@nestjs/testing"
+import type { TestingModule } from "@nestjs/testing"
+import { PrismaService } from "../prisma/prisma.service"
+import { UserRepository } from "./user.repository"
 
-describe('UserRepository', () => {
-  let repository: UserRepository;
-  let prisma: PrismaService;
+describe("UserRepository", () => {
+  let repository: UserRepository
+  let prisma: PrismaService
 
   beforeAll(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [PrismaService, UserRepository],
-    }).compile();
+    }).compile()
 
-    repository = module.get<UserRepository>(UserRepository);
-    prisma = module.get<PrismaService>(PrismaService);
-  });
+    repository = module.get<UserRepository>(UserRepository)
+    prisma = module.get<PrismaService>(PrismaService)
+  })
 
   afterAll(async () => {
-    prisma.user.deleteMany();
-  });
+    prisma.user.deleteMany()
+  })
 
-  it('fetchUser', async () => {
+  it("fetchUser", async () => {
     prisma.user.create({
       data: {
         id: 1,
-        email: 'example@mail.com',
-        name: 'example',
+        email: "example@mail.com",
+        name: "example",
       },
-    });
-    const result = repository.fetchUserById(1);
-    expect(result).toBeDefined();
-  });
-});
+    })
+    const result = repository.fetchUserById(1)
+    expect(result).toBeDefined()
+  })
+})
