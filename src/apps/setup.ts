@@ -25,6 +25,8 @@ export const { updateApolloContext, setupApp } = ((): {
   const updateApolloContext = async (prisma: PrismaClient): Promise<void> => {
     const app = await appPromise
     const apolloServer = getApolloServer(app)
+    // hand-write な方は undefined を受け取る模様
+    if (typeof apolloServer === "undefined") return
     apolloServer.requestOptions.context = {
       prisma,
     }

@@ -14,6 +14,7 @@
     "incremental": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
+    "strictPropertyInitialization": false,
     "paths": {
       "@prisma-generated/*": ["node_modules/.prisma-generated/*"]
     }
