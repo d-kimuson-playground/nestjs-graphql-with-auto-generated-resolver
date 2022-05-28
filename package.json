@@ -12,6 +12,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "gen:prisma": "prisma generate",
+    "migrate:dev": "prisma migrate dev",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "build-swc": "swc ./src -s -d dist-swc",
@@ -35,10 +36,15 @@
     "prepare": "run-p 'prepare:*'"
   },
   "dependencies": {
+    "@nestjs/apollo": "^10.0.13",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/graphql": "^10.0.13",
     "@nestjs/platform-express": "^8.0.0",
     "@prisma/client": "^3.14.0",
+    "apollo-server-express": "^3.8.1",
+    "graphql": "^15.3.0",
+    "graphql-fields": "^2.0.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",

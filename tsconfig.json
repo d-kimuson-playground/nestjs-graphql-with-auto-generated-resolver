@@ -12,8 +12,12 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@prisma-generated/*": ["node_modules/.prisma-generated/*"]
+    }
   },
+  "include": ["src", "prisma/generated"],
   "ts-node": {
     "transpileOnly": true,
     "transpiler": "ts-node/transpilers/swc-experimental"
