@@ -137,3 +137,5 @@ prisma/dev.db-journal
 
 .eslintcache
 .cspellcache
+
+dist-swc

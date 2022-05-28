@@ -2,3 +2,4 @@
 *.cjs
 *.mjs
 dist
+dist-swc
