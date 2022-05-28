@@ -8,7 +8,7 @@ import { buildSchema } from "type-graphql"
 import type { ApolloDriverConfig } from "@nestjs/apollo"
 import type { DynamicModule } from "@nestjs/common"
 import type { GraphQLSchema } from "graphql"
-import { PrismaService } from "src/prisma/prisma.service"
+import { PrismaService } from "../../services/prisma.service"
 
 export const generateSchema = async (): Promise<GraphQLSchema> => {
   const resolvers = [UserCrudResolver] as const
@@ -28,13 +28,14 @@ export const generateSchema = async (): Promise<GraphQLSchema> => {
       const schema = await generateSchema()
 
       return GraphQLModule.forRoot<ApolloDriverConfig>({
+        path: "generated/graphql",
         driver: ApolloDriver,
         schema: schema,
-        debug: true,
-        playground: true,
+        debug: process.env["NODE_ENV"] === "development",
+        playground: process.env["NODE_ENV"] === "development",
       })
     })(),
   ],
   providers: [PrismaService],
 })
-export class GraphqlAppModule {}
+export class GeneratedGraphqlAppModule {}

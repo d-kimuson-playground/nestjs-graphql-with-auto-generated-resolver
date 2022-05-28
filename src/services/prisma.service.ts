@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common"
 import { PrismaClient } from "@prisma/client"
 import type { INestApplication, OnModuleInit } from "@nestjs/common"
-import { updateApolloContext } from "src/main"
+import { updateApolloContext } from "src/apps/setup"
 
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
