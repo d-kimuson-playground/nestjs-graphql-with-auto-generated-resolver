@@ -15,7 +15,8 @@
     "swcrc",
     "autofix",
     "esbenp",
-    "prettierrc"
+    "prettierrc",
+    "typegraphql"
   ],
   "ignorePaths": ["yarn.lock"]
 }
